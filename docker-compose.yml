@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app-center:
+    build: .
+    container_name: carfloatball-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./db.json:/app/db.json
+    restart: unless-stopped
